@@ -6,6 +6,7 @@ import com.example.onepiecepirates.service.PirateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -19,8 +20,8 @@ public class PirateServiceImpl implements PirateService {
     }
 
     @Override
-    public void getAllPirates() {
-        pirateRepository.findAll();
+    public List<Pirate> getAllPirates() {
+        return pirateRepository.findAll().stream().toList();
     }
 
     @Override
