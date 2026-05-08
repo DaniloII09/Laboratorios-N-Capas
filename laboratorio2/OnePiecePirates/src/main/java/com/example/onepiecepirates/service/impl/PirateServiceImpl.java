@@ -42,7 +42,7 @@ public class PirateServiceImpl implements PirateService {
     @Override
     public Pirate deletePirate(UUID id) {
         Pirate existsPirate =  pirateRepository.getReferenceById(id);
-        pirateRepository.delete(existsPirate);
+        pirateRepository.deleteById(id);
         return existsPirate;
     }
 }
